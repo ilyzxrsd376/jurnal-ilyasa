@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum Kebangkitan Nasional</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #f9f9f9, #e3f2fd);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      padding: 15px 20px;
+      background: #1565c0;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .logos {
+      position: absolute;
+      top: 10px;
+      width: 95%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .logos img {
+      width: 60px;
+      height: auto;
+      border-radius: 50%;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .article h1 {
+      font-size: 2.8rem;
+      color: #0d47a1;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .article p {
+      font-size: 1.2rem;
+      color: #444;
+      line-height: 1.6;
+      margin: 20px auto;
+      max-width: 800px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .author {
+      font-size: 1rem;
+      color: #777;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .article img {
+      max-width: 100%;
+      margin: 20px auto;
+      border-radius: 8px;
+      animation: scaleUp 1.5s ease-in-out;
+    }
+
+    .highlight {
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 2px solid #43a047;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .highlight h2 {
+      color: #1b5e20;
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .gallery img {
+      width: calc(33.33% - 20px);
+      max-width: 300px;
+      border-radius: 8px;
+      border: 4px solid #90caf9;
+      transition: transform 0.3s ease-in-out, border 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      border-color: #1e88e5;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: #1565c0;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logos-bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 60px;
+      height: auto;
+    }
+
+    .decorations {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .decorations img {
+      width: 100px;
+      height: auto;
+      opacity: 0.8;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .decorations img:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    .video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px auto;
+}
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleUp {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        width: calc(50% - 20px);
+      }
+
+      .decorations img {
+        width: 80px;
+      }
+    }
+    /* From Uiverse.io by elijahgummer */ 
+.button-with-icon {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #0f988e;
+  font-family: "Istok Web", sans-serif;
+  letter-spacing: 1px;
+  padding: 0 12px;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-radius: 3px;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  transform: translateY(0px);
+  position: relative;
+  box-shadow:
+    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 20px rgba(0, 0, 0, 0),
+    0 3px 0 #0f988e,
+    0 3px 2px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #15ccbe;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  transition: 150ms all ease-in-out;
+}
+
+.button-with-icon .icon {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  transition: all 0.5s ease-in-out;
+}
+
+.button-with-icon:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 1px 20px rgba(0, 0, 0, 0.1),
+    0 0 0 #0f988e,
+    0 0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 rgba(0, 0, 0, 0);
+}
+
+.button-with-icon:hover .text {
+  transform: translateX(80px);
+}
+.button-with-icon:hover .icon {
+  transform: translate(23px);
+}
+
+.text {
+  transition: all 0.5s ease-in-out;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logos">
+      <img src="Logo-Metikasis.png" alt="Logo Metikasis" class="logo-left">
+    </div>
+  </header>
+
+  <main>
+    <section id="article" class="article">
+      <h1>Museum Kebangkitan Nasional</h1>
+      <img src="2019-11-27_7707.jpg" alt="Gedung Museum Kebangkitan Nasional">
+      <p>
+        Museum Kebangkitkan Nasional merupakan sebuah gedung yang dibangun sebagai sebuah monumen dari tempat lahir serta berkembangnya kesadaran nasional serta ditemukannya organisasi dari pergerakan modern untuk pertama kali, yaitu Boedi Oetomo. Sebelum bangunan ini menjadi sebuah museum, dahulu bangunan ini digunakan sebagai sebuah sekolah yang didirikan oleh Belanda dengan nama sekolah yaitu School tot Opleiding van Inlandsche Artsen yang disingkat dengan nama STOVIA atau Sekolah Dokter Bumiputra.
+      </p>
+      <div class="highlight">
+        <h2>Fasilitas di Museum</h2>
+        <p>
+          Di dalam museum ini, pengunjung dapat melihat replika ruang kelas, koleksi foto, serta berbagai dokumen sejarah yang menggambarkan perjuangan bangsa Indonesia. Salah satu bagian yang menarik adalah ruang pameran yang memperlihatkan kehidupan para pahlawan dan upaya mereka dalam memperjuangkan kemerdekaan Indonesia.
+        </p>
+      </div>
+      
+    </section>
+
+    <section id="article-2" class="article">
+      <h1>Sejarah Budi Utomo</h1>
+      <img src="anu.jpg" alt="Sejarah Budi Utomo">
+      <p>
+        Budi Utomo adalah organisasi pertama di Indonesia. Organisasi ini didirikan oleh para pelajar School tot Opleiding van Inlandsche Artsen (STOVIA) pada tanggal 20 Mei 1908.
+
+Para pelajar tersebut terdiri dari Soeradji, Muhammad Saleh, Soewarno A, Goenawan Mangoenkoesoemo, Suwarno B., R. Gumbreg, R. Angka, dan Soetomo.
+
+Nama organisasi Budi Utomo diusulkan oleh Soeradji dan semboyan yang dikumandangkan ialah Indie Vooruit (Hindia Maju) dan bukan Java Vooruit (Jawa Maju).
+
+Berdirinya Budi Utomo ini bermula dari ide-ide dr. Wahidin Soedirohusodo. Ia merupakan alumni STOVIA yang sering berkeliling di kota-kota besar di Pulau Jawa.
+
+Ia berkeliling menyebarkan gagasannya mengenai bantuan dana bagi pelajar-pelajar pribumi berprestasi yang tidak mampu melanjutkan sekolah.
+
+Ide itu kemudian diterima oleh dr. Sutomo dan kawan-kawan dengan mendirikan Budi Utomo. Organisasi ini bersifat sosial, ekonomi, kebudayaan, serta tidak bersifat politik.
+
+Hari lahir Budi Utomo ini kemudian diperingati sebagai Hari Kebangkitan Nasional.
+
+Hal ini berdasarkan Keputusan Presiden Nomor 316 Tahun 1959 tanggal 16 Desember 1959 untuk memperingati peristiwa Kebangkitan Nasional Indonesia.</p>
+      
+    </section>
+
+    <section id="article-3" class="article">
+      <h1>Ruang Pameran Sejarah Perjuangan</h1>
+      <img src="ruang-pameran.jpg" alt="Ruang Pameran Sejarah Perjuangan">
+      <p>
+        Salah satu bagian menarik dari Museum Kebangkitan Nasional adalah ruang pameran yang menggambarkan perjalanan panjang bangsa Indonesia menuju kemerdekaan. Di sini, pengunjung dapat melihat replika-replika penting yang menjadi simbol perjuangan, seperti pakaian adat yang dikenakan oleh tokoh-tokoh perjuangan dan dokumen-dokumen penting yang digunakan dalam pergerakan kemerdekaan.
+      </p>
+      
+    </section>
+
+    <section id="article-4" class="article">
+      <h1>Ruang Belajar Stovia</h1>
+      <img src="ruang-belajar.jpg" alt="Ruang Belajar">
+      <p>
+        Ruang Belajar Stovia itu tempat anak-anak sekolah kedokteran zaman Belanda belajar. Biasanya ruangannya simpel, ada meja panjang sama bangku kayu. Di sana mereka belajar ilmu-ilmu kedokteran, kayak anatomi tubuh sama cara ngobatin orang. Stovia ini juga tempat lahirnya banyak tokoh penting Indonesia, kayak dr. Soetomo, yang bantu bangun pergerakan nasional. Jadi, nggak cuma belajar jadi dokter, tapi juga belajar buat memperjuangkan Indonesia.
+      </p>
+
+    </section>
+    <section id="article-4" class="article">
+      <h1>Monas (Monumen Nasional)</h1>
+      <img id="media" src="monas.jpg" alt="Monas">
+<button id="toggleMedia" class="button-with-icon">
+  <svg
+    class="icon"
+    id="Play"
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      class="color000000 svgShape"
+      fill="#ffffff"
+      d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+    ></path>
+  </svg>
+  <span class="text">Play</span>
+</button>
+
+      <p id="description">
+        Monas itu ikon Jakarta dan simbol perjuangan rakyat Indonesia. Dibangun tahun 1961, tingginya 132 meter, dan di puncaknya ada api yang dilapisi emas. Di bawahnya ada museum sejarah, dan kalau naik ke atas, bisa lihat pemandangan Jakarta dari ketinggian.</p>
+      <h3 class="author">Ditulis oleh: <a href="https://instagram.com/icatruzz_" class="author">Ilyasa Rosada</a> X TJKT 1 M-32</h3>
+    </section>
+    <div class="decorations">
+      <img src="0.jpg" alt="Hiasan 1">
+      <img src="9.jpg" alt="Hiasan 2">
+      <img src="8.jpg" alt="Hiasan 3">
+    </div>
+    <h2>Dokumentasi Museum</h2>
+    <div class="gallery">
+      <img src="1.jpg" alt="Koleksi Museum 1">
+      <img src="2.jpg" alt="Koleksi Museum 2">
+      <img src="3.jpg" alt="Koleksi Museum 3">
+      <img src="4.jpg" alt="Koleksi Museum 4">
+      <img src="5.jpg" alt="Koleksi Museum 5">
+      <img src="6.jpg" alt="Koleksi Museum 6">
+      <img src="7.jpg" alt="Koleksi Museum 7">
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Museum Kebangkitan Nasional. All Rights Reserved.</p>
+    <div class="logos-bottom">
+      <img src="logo-nesta.jpg" alt="Logo Nesta">
+      <img src="Logo-Metikasis.png" alt="Logo Metikasis">
+    </div>
+  </footer>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const elements = document.querySelectorAll(".article h1, .article p, .article img, .highlight, .gallery");
+
+      // Mengatur posisi awal elemen agar tersembunyi sebelum muncul
+      elements.forEach(function(element) {
+          element.style.opacity = 0;
+          element.style.transform = 'translateY(20px)';
+      });
+
+      // Fungsi untuk memeriksa elemen yang masuk viewport
+      function checkVisibility() {
+          elements.forEach(function(element) {
+              const rect = element.getBoundingClientRect();
+              
+              // Cek apakah elemen dalam viewport
+              if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                  element.style.opacity = 1;
+                  element.style.transform = 'translateY(0)';
+                  element.style.transition = 'opacity 1s ease, transform 1s ease';
+              } else {
+                  element.style.opacity = 0;
+                  element.style.transform = 'translateY(20px)';
+              }
+          });
+      }
+
+      // Mengaktifkan fungsi saat halaman di-scroll
+      window.addEventListener("scroll", function() {
+          checkVisibility();
+      });
+
+      // Memanggil checkVisibility saat halaman pertama kali dimuat
+      checkVisibility();
+  });
+
+  document.getElementById('toggleMedia').addEventListener('click', function () {
+    const mediaElement = document.getElementById('media');
+    const description = document.getElementById('description');
+    const videoSrc = 'monas.mp4';
+
+    // Buat elemen video
+    const videoElement = document.createElement('video');
+    videoElement.setAttribute('autoplay', 'true');
+    videoElement.classList.add('video'); // Menambahkan kelas 'video' agar responsif
+
+    const sourceElement = document.createElement('source');
+    sourceElement.setAttribute('src', videoSrc);
+    sourceElement.setAttribute('type', 'video/mp4');
+
+    videoElement.appendChild(sourceElement);
+
+    // Ganti gambar dengan video
+    mediaElement.replaceWith(videoElement);
+    description.textContent = 'Gojo (Ilyasa) vs Sukuna (Abelino) adalah duel epik antara kekuatan tak terbatas dan kutukan mematikan. Gojo menguasai "Infinity" dan teknik canggih, sementara Sukuna mengandalkan brutalitas dan kutukan kuat. Pertarungan ini adalah adu strategi, kekuatan, dan tekad untuk menentukan siapa yang benar-benar terkuat!';
+
+    // Tambahkan event listener untuk kembali ke gambar setelah video selesai
+    videoElement.addEventListener('ended', function () {
+        const imgElement = document.createElement('img');
+        imgElement.setAttribute('id', 'media');
+        imgElement.setAttribute('src', 'monas.jpg');
+        imgElement.setAttribute('alt', 'Monas');
+
+        videoElement.replaceWith(imgElement);
+        description.textContent = 'Monas itu ikon Jakarta dan simbol perjuangan rakyat Indonesia. Dibangun tahun 1961, tingginya 132 meter, dan di puncaknya ada api yang dilapisi emas. Di bawahnya ada museum sejarah, dan kalau naik ke atas, bisa lihat pemandangan Jakarta dari ketinggian.';
+    });
+});
+</script>
+      </html>
